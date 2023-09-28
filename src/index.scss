@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:regular,500,700,800&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto:300&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Pacifico:regular&display=swap");
+
+@import "./scss/theming";
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1230px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+ul {
+  list-style: none;
+}
+
+.observe {
+  transition: transform .5s, opacity .5s;
+  transform: translateX(-30px);
+  opacity: 0;
+
+  &.active {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.buttons {
+  display: flex;
+  gap: 8px;
+}

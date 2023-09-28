@@ -1,0 +1,64 @@
+@use '../../scss/vars';
+
+.button {
+	transition: background-color .2s, transform .5s;
+
+	cursor: pointer;
+	display: inline-flex;
+	padding: 8px 12px;
+	border-radius: 8px;
+	align-items: center;
+	justify-content: center;
+	gap: 4px;
+	font-size: 14px;
+	font-weight: 500;
+}
+
+.buttonPrimary {
+	background-color: vars.$accent-color;
+	color: #fff;
+
+	&:hover {
+		background-color: lighten(vars.$accent-color, 3%);
+	}
+
+	&:active {
+		background-color: darken(vars.$accent-color, 3%);
+	}
+}
+
+.buttonSecondary {
+	padding: 6px 10px;
+
+
+	background-color: transparent;
+
+
+
+
+
+
+	&.dark {
+		border: #fff 1px solid;
+
+		&:hover {
+			background-color: rgba(#fff, 20%);
+		}
+
+		&:active {
+			background-color: rgba(#fff, 40%);
+		}
+	}
+
+	&.light {
+		border: #000 1px solid;
+
+		&:hover {
+			background-color: rgba(#000, 20%);
+		}
+
+		&:active {
+			background-color: rgba(#000, 40%);
+		}
+	}
+}

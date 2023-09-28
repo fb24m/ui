@@ -1,0 +1,73 @@
+@use "../../scss/vars";
+
+.input {
+	border: none;
+	outline: none;
+	flex-grow: 1;
+	font-size: 16px;
+}
+
+.wrapper {
+	display: inline-flex;
+	align-items: center;
+	border: #000 1px solid;
+	position: relative;
+	padding: 12px 16px;
+	border-radius: 8px;
+	min-width: 244px;
+
+	&:has(i) {
+		padding: 10px 16px;
+	}
+
+	i {
+		font-size: 24px;
+	}
+
+	&:has(input:focus) {
+		border-color: vars.$accent-color;
+
+		i {
+			color: vars.$accent-color;
+		}
+	}
+}
+
+.label {
+	position: absolute;
+	left: 16px;
+	padding: 0 4px;
+
+	color: gray;
+	background-color: #fff;
+
+	pointer-events: none;
+
+	font-size: rem(16);
+
+	top: 50%;
+	transform: translateY(-50%);
+	transition: top .3s, font-size .3s, transform .3s;
+
+	.wrapper:has(i) & {
+		margin-left: 28px;
+	}
+}
+
+.input {
+	.wrapper:has(i) & {
+		margin-left: 8px;
+	}
+
+	&:focus+.label,
+	&:not(:placeholder-shown)+.label {
+		color: #000;
+		top: 0;
+		transform: translate(0, -9px);
+		font-size: 14px;
+	}
+
+	&:focus+.label {
+		color: vars.$accent-color;
+	}
+}

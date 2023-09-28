@@ -1,0 +1,6 @@
+@use '../../scss/mixins';
+
+.icon {
+	font-size: mixins.rem(22);
+	font-variation-settings: 'wght' 300;
+}

@@ -1,0 +1,7 @@
+@use '../../scss/mixins';
+
+.body1 {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+	font-size: mixins.rem(16);
+}

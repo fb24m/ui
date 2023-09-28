@@ -1,0 +1,7 @@
+@use '../../scss/mixins';
+
+.title1 {
+	font-size: mixins.rem(48);
+	line-height: 120%;
+	font-weight: 800;
+}
