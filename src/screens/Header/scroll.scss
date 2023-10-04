@@ -1,0 +1,33 @@
+.logoBlock a {
+	transition: font-size .3s;
+}
+
+.headerLogo {
+	transition: width .3s, height .3s;
+}
+
+.header .button {
+	transition: padding .3s;
+
+	i {
+		transition: font-size .3s;
+	}
+}
+
+.header {
+	transition: padding .3s;
+}
+
+.scroll {
+	.header {
+		padding: 10px 0;
+
+		.button {
+			padding: 6px 8px;
+
+			i {
+				font-size: 18px;
+			}
+		}
+	}
+}

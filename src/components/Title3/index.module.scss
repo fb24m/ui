@@ -1,6 +1,6 @@
 @use '../../scss/mixins';
 
 .title3 {
-	font-size: mixins.rem(30);
+	@include mixins.adaptive-value('font-size', 30, 20);
 	font-weight: 700;
 }

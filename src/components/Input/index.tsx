@@ -1,22 +1,26 @@
 import styles from './index.module.scss';
 import React from 'react';
 
-interface InputProps {
+interface InputProps extends React.HTMLAttributes<HTMLInputElement> {
 	icon: React.ReactElement
 	placeholder: string
-	id?: string
 	className?: string
-	name?: string
-	required?: boolean
 	autoComplete?: string
+	register?: Function
+	name: string
+	required?: boolean
 }
 
-export const Input = (props: InputProps): React.ReactElement => {
+export const Input = ({ className, icon, placeholder, name, register, required = false, ...props }: InputProps): React.ReactElement => {
 	return (
-		<div className={props.className + ' ' + styles.wrapper}>
-			{props.icon ? props.icon : ''}
-			<input className={styles.input} id={props.id} autoComplete={props.autoComplete} type="text" placeholder=" " required />
-			<span className={styles.label}>{props.placeholder}</span>
+		<div className={`${className} ${styles.wrapper}`}>
+			{icon ? icon : ''}
+			<input
+				className={styles.input}
+				{...props} placeholder=' '
+				{...register ? register(name, { required: required }) : ''} />
+
+			<span className={styles.label}>{placeholder}</span>
 		</div>
 	);
 };

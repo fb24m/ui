@@ -1,9 +1,10 @@
 import { createContext } from 'react';
+import { ITheme } from '../../interfaces/Theme';
 
-export const ThemeContext = createContext('light');
+export const ThemeContext = createContext<ITheme>({} as ITheme);
 
 interface ThemeProviderProps {
-	theme: 'dark' | 'light'
+	theme: ITheme
 	children: JSX.Element | string
 }
 

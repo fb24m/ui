@@ -1,16 +1,16 @@
-@use '../../scss/vars';
 @use '../../scss/mixins';
 
 .link {
-	color: vars.$accent-color;
+	color: var(--mainColor);
+	;
 	font-size: mixins.rem(14);
 	font-weight: 500;
 
 	&:hover {
-		color: lighten(vars.$accent-color, 10%)
+		color: var(--hoverColor);
 	}
 
 	&:active {
-		color: darken(vars.$accent-color, 10%)
+		color: var(--activeColor);
 	}
 }

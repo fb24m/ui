@@ -5,12 +5,17 @@
 	outline: none;
 	flex-grow: 1;
 	font-size: 16px;
+	background-color: var(--backgroundColor);
+	color: var(--foregroundColor);
 }
 
 .wrapper {
+	transition: border .3s;
+	border: var(--foregroundColor) 1px solid;
+
 	display: inline-flex;
 	align-items: center;
-	border: #000 1px solid;
+
 	position: relative;
 	padding: 12px 16px;
 	border-radius: 8px;
@@ -21,14 +26,15 @@
 	}
 
 	i {
+		transition: color .3s;
 		font-size: 24px;
 	}
 
 	&:has(input:focus) {
-		border-color: vars.$accent-color;
+		border-color: var(--mainColor);
 
 		i {
-			color: vars.$accent-color;
+			color: var(--mainColor);
 		}
 	}
 }
@@ -39,7 +45,7 @@
 	padding: 0 4px;
 
 	color: gray;
-	background-color: #fff;
+	background-color: var(--backgroundColor);
 
 	pointer-events: none;
 
@@ -47,7 +53,7 @@
 
 	top: 50%;
 	transform: translateY(-50%);
-	transition: top .3s, font-size .3s, transform .3s;
+	transition: top .3s, font-size .3s, transform .3s, color .3s;
 
 	.wrapper:has(i) & {
 		margin-left: 28px;
@@ -61,13 +67,13 @@
 
 	&:focus+.label,
 	&:not(:placeholder-shown)+.label {
-		color: #000;
+		color: var(--foregroundColor);
 		top: 0;
 		transform: translate(0, -9px);
 		font-size: 14px;
 	}
 
 	&:focus+.label {
-		color: vars.$accent-color;
+		color: var(--mainColor);
 	}
 }

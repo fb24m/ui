@@ -1,57 +1,27 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.scss';
 
 import { ThemeProvider } from './components/ThemeProvider';
+import { fb24mDarkTheme } from './themes/fb24mDarkTheme';
 
-import { HashRouter, Route, Routes } from 'react-router-dom';
-import { observer } from './components/ObserverProvider';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
-import { Home } from './pages/Home';
-import { Header } from './screens/Header';
-import { AdminPanel } from './pages/Admin';
+import { App } from './components/App';
+import { SettingsProvider } from './contexts/SettingsProvider';
 
-import { Client } from '@notionhq/client';
-
-const notion = new Client({ auth: 'secret_io9SaqKTLHbIWZo1SIOZ2d0Ccm9QDTqcN0Tmnr73f2K' })
-
+const queryClient = new QueryClient();
 
 const root: ReactDOM.Root = ReactDOM.createRoot(document.getElementById('root')!);
 
-const App = (): React.ReactElement => {
-  useEffect(() => {
-    const observedElements = document.querySelectorAll('.observe');
-
-    observedElements.forEach((el) => {
-      observer.observe(el);
-    });
-  }, []);
-
-  return (
-    <HashRouter>
-      <Header />
-      <Routes>
-        <Route path='/' Component={Home} />
-        <Route path='/admin' Component={AdminPanel} />
-        <Route path='/*' Component={() => <>404</>} />
-      </Routes>
-    </HashRouter>
-  )
-};
-
-const getPortfolioData = async () => {
-  const response = await notion.databases.update({ database_id: '1b1a5bc766ed43a2b1f73a8c4b24e6be' });
-
-  console.log(response);
-}
-
-getPortfolioData();
-
-
 root.render(
   <React.StrictMode>
-    <ThemeProvider theme="light">
-      <App />
-    </ThemeProvider>
+    <QueryClientProvider client={queryClient}>
+      <ThemeProvider theme={fb24mDarkTheme}>
+        <SettingsProvider>
+          <App />
+        </SettingsProvider>
+      </ThemeProvider>
+    </QueryClientProvider>
   </React.StrictMode>
 );

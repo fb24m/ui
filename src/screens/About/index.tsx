@@ -20,7 +20,7 @@ export const About = (): React.ReactElement => {
 					</div>
 					<div className={`buttons ${styles.buttons}`}>
 						<Button className={`observe`} icon={<Icon name='phone_enabled' />} as='a' appearance='Primary'>Связаться</Button>
-						<Button className={`observe`} icon={<Icon name='laptop' />} as='a' appearance='Secondary'>В портфолио</Button>
+						<Button className={`observe`} icon={<Icon name='laptop' />} href='#portfolio' as='a' appearance='Secondary'>В портфолио</Button>
 					</div>
 				</div>
 				<div className={styles.subblock}>

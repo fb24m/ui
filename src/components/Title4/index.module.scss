@@ -1,0 +1,6 @@
+@use '../../scss/mixins';
+
+.title4 {
+	@include mixins.adaptive-value('font-size', 20, 18);
+	font-weight: 700;
+}

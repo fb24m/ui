@@ -9,6 +9,24 @@
   padding: 0;
   font-family: 'Montserrat', sans-serif;
   text-decoration: none;
+
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  padding-top: 106px;
+  background-color: var(--backgroundColor);
+  color: var(--foregroundColor);
+
+  ::selection {
+    color: #fff;
+    background-color: var(--activeColor);
+  }
+}
+
+html:has(._menu-opened) {
+  overflow-x: hidden;
 }
 
 .container {
@@ -35,4 +53,22 @@ ul {
 .buttons {
   display: flex;
   gap: 8px;
+}
+
+.container-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+
+  &>* {
+    &:nth-child(1) {
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+
+    &:nth-child(2) {
+      grid-column-start: 3;
+      grid-column-end: 3;
+    }
+  }
 }

@@ -4,18 +4,11 @@ import React from 'react';
 import { Label, Title1, Body1, Button, Icon, Image } from '../../components';
 import { Advantage } from './Advantage';
 
-import { useWidth } from '../../hooks/useWidth';
-
 export const Welcome = (): React.ReactElement => {
-	const movedCards = useWidth(1000);
-
 	const cards: React.ReactElement = <>
 		<Advantage className={styles.mobile} icon="cycle" title="Оптимизация" description="Картинки сжимаются, шрифты уменьшаются - без потери качества. Это обеспечивает быструю загрузку сайтов на медленных устройствах" />
 		<Advantage className={styles.mobile} icon="frame_source" title="Исходники" description="Исходники - SCSS и Nunjucks (или любые препроцессоры на ваш выбор). Дам их бесплатно, а если надо - объясню зачем они и куда их деть" />
 	</>
-
-
-	console.log(movedCards);
 
 	return (
 		<div className={styles.block}>
@@ -26,7 +19,7 @@ export const Welcome = (): React.ReactElement => {
 						<Title1 className={`observe ${styles.title}`}>я fb24m</Title1>
 						<Body1 className={`observe ${styles.description}`}>Более 3-ех лет опыта фронтенд-разработки, за это время разработал десятки сайтов, и сотни компонентов, многие из которых работают и приносят доход</Body1>
 						<Button className={`observe ${styles.description}`}
-							as='a' href='#'
+							as='a' href='#portfolio'
 							icon={<Icon name='laptop' />}
 							appearance='Primary'>В портфолио</Button>
 					</div>
