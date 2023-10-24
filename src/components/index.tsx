@@ -10,7 +10,11 @@ import { Icon } from "./Icon";
 import { Image } from "./Image";
 import { Input } from "./Input";
 import { MarkedList } from "./MarkedList";
-import { Card } from "./Card";
+import { Card, CardProps } from "./Card";
 import { ErrorHandler } from "./ErrorHandler";
+import { useModal, Popup } from "./Popup";
+import { PopupFooter } from "./PopupFooter";
+import { Box, BoxProps, Alignment } from "./Box";
 
-export { Label, Link, Title1, Title2, Title3, Title4, Body1, Button, Icon, Image, Input, MarkedList, Card, ErrorHandler };
+export { Label, Link, Title1, Title2, Title3, Title4, Body1, Button, Icon, Image, Input, MarkedList, Card, ErrorHandler, Popup, useModal, Box, Alignment, PopupFooter };
+export type { CardProps, BoxProps }

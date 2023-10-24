@@ -5,12 +5,12 @@ export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
 	size?: 'small' | 'normal' | 'big'
 }
 
-export const Card = (props: CardProps): React.ReactElement => {
+export const Card = ({ className, children, ...props }: CardProps): React.ReactElement => {
 	const size = props.size ? props.size : 'normal';
 
 	return (
-		<div className={`${styles.card} ${styles[`card_${size}`]}`}>
-			{props.children}
+		<div {...props} className={`${className} ${styles.card} ${styles[`card_${size}`]}`}>
+			{children}
 		</div>
 	);
 };
