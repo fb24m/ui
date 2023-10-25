@@ -1,4 +1,4 @@
-import { Alignment, Image, MarkedList, Title2, Title3 } from '../../components';
+import { Alignment, Image, MarkedList, Title3 } from '../../components';
 import styles from './index.module.scss';
 import React from 'react';
 import { ContactForm } from '../../blocks/ContactForm';

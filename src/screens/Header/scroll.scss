@@ -1,3 +1,5 @@
+@use '../../scss/breakpoints';
+
 .logoBlock a {
 	transition: font-size .3s;
 }
@@ -7,7 +9,7 @@
 }
 
 .header .button {
-	transition: padding .3s;
+	transition: padding .3s, width .3s, height .3s;
 
 	i {
 		transition: font-size .3s;
@@ -24,6 +26,16 @@
 
 		.button {
 			padding: 6px 8px;
+
+			&:not(.icon-mobile) {
+				width: 36px;
+				height: 36px;
+			}
+
+			@media (max-width: breakpoints.$mobile) {
+				width: 36px;
+				height: 36px;
+			}
 
 			i {
 				font-size: 18px;

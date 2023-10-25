@@ -5,3 +5,13 @@
 	font-variation-settings: 'wght' 300;
 	user-select: none;
 }
+
+.small {}
+
+.medium {}
+
+.big {
+	font-size: mixins.rem(40);
+}
+
+.large {}

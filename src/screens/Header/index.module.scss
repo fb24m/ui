@@ -39,7 +39,7 @@
 	align-items: center;
 	position: relative;
 	flex-wrap: wrap;
-	gap: 16px 32px;
+	gap: 16px 24px;
 	background-color: var(--backgroundColor);
 
 	@media (max-width: breakpoints.$tablet) {
@@ -47,12 +47,38 @@
 	}
 }
 
-.button {
-	@media (max-width: breakpoints.$tablet) {
-		font-size: 0 !important;
+@mixin icon-only {
+	width: 40px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
 
+.button {
+	span {
+		transition: max-width .5s;
+		display: inline-block;
+
+		@media (max-width: breakpoints.$tablet) {
+			max-width: 0;
+			overflow: hidden;
+		}
+	}
+
+	@media (max-width: breakpoints.$tablet) {
 		padding: 8px !important;
 		padding-right: 6px !important;
+	}
+
+	&.iconOnly {
+		@include icon-only;
+	}
+
+	&.iconMobile {
+		@media (max-width: breakpoints.$mobile) {
+			@include icon-only;
+		}
 	}
 }
 

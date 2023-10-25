@@ -2,17 +2,25 @@ import styles from './index.module.scss';
 import './scroll.scss';
 import React from 'react';
 
-import { Link, Button, Icon, Image, Popup, useModal, Alignment } from '../../components';
+import { Link, Button, Icon, Image, useModal, Alignment } from '../../components';
 import { useState, useContext } from 'react';
 import { SettingsContext } from '../../contexts/SettingsProvider';
 import { ContactForm } from '../../blocks/ContactForm/index';
-import { Title2 } from '../../components/Title2/index';
-import { PopupFooter } from '../../components/PopupFooter/index';
-import { PopupBody } from '../../components/PopupBody';
+import { getOppositeTheme } from '../../functions/getOppositeTheme';
 
 const toggleState = <T,>(value: T, setter: Function, newValue: T) => {
 	if (value === '') setter(newValue);
 	else setter('');
+}
+
+const toggleTheme = () => {
+	if (localStorage.getItem('color-theme') === 'light') {
+		localStorage.setItem('color-theme', 'dark');
+	}
+	else {
+		localStorage.setItem('color-theme', 'light');
+	}
+	location.reload();
 }
 
 export const Header = (): React.ReactElement => {
@@ -40,7 +48,19 @@ export const Header = (): React.ReactElement => {
 						<li className={`observe ${styles.item}`}><Link href="/portfolio">Портфолио</Link></li>
 						<li className={`observe ${styles.item}`}><Link href="/contact">Связаться</Link></li>
 					</ul>
-					<Button onClick={toggleContactPopup} className={`observe ${styles.button}`} icon={<Icon name='phone_enabled' />} as='button' appearance='Primary'>Связаться</Button>
+					<div className="buttons">
+						<Button onClick={toggleContactPopup}
+							className={`observe icon-mobile ${styles.button} ${styles.iconMobile}`}
+							icon={<Icon name='phone_enabled' />}
+							as='button'
+							appearance='Primary'><span>Связаться</span></Button>
+						<Button
+							onClick={toggleTheme}
+							className={`observe ${styles.button} ${styles.iconOnly}`}
+							icon={<Icon name={`${getOppositeTheme()}_mode`} />}
+							as='button'
+							appearance='Secondary'> </Button>
+					</div>
 				</div>
 			</header>
 

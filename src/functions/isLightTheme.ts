@@ -1,0 +1,1 @@
+export const isLightTheme = (): boolean => localStorage.getItem('color-theme') === 'light';
