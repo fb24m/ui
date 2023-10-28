@@ -38,7 +38,7 @@ export const Header = (): React.ReactElement => {
 				<div className={`${styles.container} container`}>
 					<button className={styles.menuClose} onClick={toggleMenuOpened}><Icon name='menu' /></button>
 					<div className={`${styles.logoBlock} logoBlock observe`}>
-						<Link href="/" style={false}><>
+						<Link href="/" appearance={false}><>
 							<Image absoluteSrc src={settings.site_icon_url} alt="" className={`${styles.logo} headerLogo`} onClick={toggleMenuOpened} />
 							{settings.name}
 						</></Link>
@@ -47,6 +47,7 @@ export const Header = (): React.ReactElement => {
 						<li className={`observe ${styles.item}`}><Link href="/blog">Блог</Link></li>
 						<li className={`observe ${styles.item}`}><Link href="/portfolio">Портфолио</Link></li>
 						<li className={`observe ${styles.item}`}><Link href="/contact">Связаться</Link></li>
+						<li className={`observe ${styles.item}`}><Link href="/pet">Пет-проекты</Link></li>
 					</ul>
 					<div className="buttons">
 						<Button onClick={toggleContactPopup}

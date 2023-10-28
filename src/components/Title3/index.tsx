@@ -3,8 +3,8 @@ import { TextComponentProps } from '../../interfaces/TextComponentProps.interfac
 import { useContext } from 'react';
 import { ThemeContext } from '../ThemeProvider';
 
-export const Title3 = (props: TextComponentProps): JSX.Element => {
+export const Title3 = ({ children, className, ...props }: TextComponentProps): JSX.Element => {
 	const theme = useContext(ThemeContext);
 
-	return <h3 className={`${theme} ${styles.title3} ${props.className}`}>{props.children}</h3>
+	return <h3 className={`${theme} ${styles.title3} ${className}`} {...props}>{children}</h3>
 }

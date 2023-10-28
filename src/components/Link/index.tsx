@@ -3,9 +3,9 @@ import { TextComponentProps } from '../../interfaces/TextComponentProps.interfac
 
 interface LinkProps extends TextComponentProps {
 	href: string
-	style?: boolean
+	appearance?: boolean
 }
 
 export const Link = (props: LinkProps) => {
-	return <a onClick={() => { document.body.style.transform = 'translateX(100%)'; document.body.style.opacity = '0' }} href={`${props.href}`} className={`${props.style === undefined || props.style ? styles.link : ''} ${props.className}`}>{props.children}</a>
+	return <a onClick={() => { document.body.style.transform = 'translateX(100%)'; document.body.style.opacity = '0' }} href={`${props.href}`} className={`${props.appearance === undefined || props.appearance ? styles.link : ''} ${props.className}`}>{props.children}</a>
 };

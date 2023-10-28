@@ -5,6 +5,7 @@ import { Title2 } from "./Title2";
 import { Title3 } from "./Title3";
 import { Title4 } from "./Title4";
 import { Body1 } from "./Body1";
+import { Body1Strong } from "./Body1Strong";
 import { Button } from "./Button";
 import { Icon } from "./Icon";
 import { Image } from "./Image";
@@ -16,5 +17,5 @@ import { useModal, Popup } from "./Popup";
 import { PopupFooter } from "./PopupFooter";
 import { Box, BoxProps, Alignment } from "./Box";
 
-export { Label, Link, Title1, Title2, Title3, Title4, Body1, Button, Icon, Image, Input, MarkedList, Card, ErrorHandler, Popup, useModal, Box, Alignment, PopupFooter };
+export { Label, Link, Title1, Title2, Title3, Title4, Body1, Body1Strong, Button, Icon, Image, Input, MarkedList, Card, ErrorHandler, Popup, useModal, Box, Alignment, PopupFooter };
 export type { CardProps, BoxProps }
