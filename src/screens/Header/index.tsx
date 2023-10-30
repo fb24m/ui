@@ -2,11 +2,13 @@ import styles from './index.module.scss';
 import './scroll.scss';
 import React from 'react';
 
-import { Link, Button, Icon, Image, useModal, Alignment } from '../../components';
+import { Link, Button, Icon, Image, useModal, Alignment, Box } from '@fb24m/ui/components';
 import { useState, useContext } from 'react';
 import { SettingsContext } from '../../contexts/SettingsProvider';
 import { ContactForm } from '../../blocks/ContactForm/index';
 import { getOppositeTheme } from '../../functions/getOppositeTheme';
+
+import { WhatsNewPopup } from '../../popups/WhatsNewPopup';
 
 const toggleState = <T,>(value: T, setter: Function, newValue: T) => {
 	if (value === '') setter(newValue);
@@ -25,6 +27,8 @@ const toggleTheme = () => {
 
 export const Header = (): React.ReactElement => {
 	const [contactPopup, toggleContactPopup] = useModal();
+	const [whatsNewPopup, toggleWhatsNewPopup] = useModal();
+
 	const [headerClass, setHeaderClass] = useState('');
 	const settings = useContext(SettingsContext);
 
@@ -48,8 +52,9 @@ export const Header = (): React.ReactElement => {
 						<li className={`observe ${styles.item}`}><Link href="/portfolio">Портфолио</Link></li>
 						<li className={`observe ${styles.item}`}><Link href="/contact">Связаться</Link></li>
 						<li className={`observe ${styles.item}`}><Link href="/pet">Пет-проекты</Link></li>
+						<li className={`observe ${styles.item}`}><Button appearance='Link' onClick={toggleWhatsNewPopup}>Что нового</Button></li>
 					</ul>
-					<div className="buttons">
+					<Box align={Alignment.end} justify={Alignment.end}>
 						<Button onClick={toggleContactPopup}
 							className={`observe icon-mobile ${styles.button} ${styles.iconMobile}`}
 							icon={<Icon name='phone_enabled' />}
@@ -61,14 +66,13 @@ export const Header = (): React.ReactElement => {
 							icon={<Icon name={`${getOppositeTheme()}_mode`} />}
 							as='button'
 							appearance='Secondary'> </Button>
-					</div>
+					</Box>
 				</div>
 			</header>
 
-
-			<ContactForm bind={contactPopup} as='popup' buttonsAlign={Alignment.end}
+			<ContactForm bind={contactPopup} as='popup' buttonsJustify={Alignment.end}
 				buttons={<Button icon={<Icon name='cancel' />} appearance='Secondary' onClick={toggleContactPopup}>Закрыть</Button>} />
-
+			<WhatsNewPopup togglePopup={toggleWhatsNewPopup} bind={whatsNewPopup} />
 		</>
 	);
 };

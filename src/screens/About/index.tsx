@@ -1,7 +1,7 @@
 import styles from './index.module.scss';
 import React from 'react';
 
-import { Title2, Label, Button, Icon, Image } from '../../components';
+import { Title2, Label, Button, Icon, Image } from '@fb24m/ui/components';
 import { AboutCard } from './AboutCard';
 
 export const About = (): React.ReactElement => {

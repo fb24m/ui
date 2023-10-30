@@ -20,6 +20,10 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "declaration.d.ts"],
+  "include": [
+    "src",
+    "declaration.d.ts",
+    "node_modules/@fb24m/ui/interfaces/Theme.ts"
+  ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

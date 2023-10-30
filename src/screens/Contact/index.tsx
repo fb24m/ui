@@ -1,8 +1,8 @@
-import { Alignment, Image, MarkedList, Title3 } from '../../components';
 import styles from './index.module.scss';
 import React from 'react';
 import { ContactForm } from '../../blocks/ContactForm';
-import { Card } from '../../components/Card/index';
+
+import { Card, Alignment, Image, MarkedList, Title3 } from '@fb24m/ui/components/';
 
 export const Contact = (): React.ReactElement => {
 	return (
@@ -26,7 +26,7 @@ export const Contact = (): React.ReactElement => {
 			</MarkedList>
 			<Card size='big'>
 				<Title3 className={styles.title}>Обратная связь</Title3>
-				<ContactForm buttonsAlign={Alignment.stretch} />
+				<ContactForm buttonsJustify={Alignment.end} />
 			</Card>
 			<div className={styles.block}>
 				<Image src="home/contact.png" alt="" />

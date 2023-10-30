@@ -1,7 +1,7 @@
 import styles from './index.module.scss';
 import React from 'react';
 
-import { Image, Body1, Title4, Button, Icon } from '../../components';
+import { Image, Body1, Title4, Button, Icon } from '@fb24m/ui/components';
 
 interface ErrorProps {
 	code: number

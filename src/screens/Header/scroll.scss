@@ -25,20 +25,26 @@
 		padding: 10px 0;
 
 		.button {
-			padding: 6px 8px;
+			padding: 6px 4px !important;
 
 			&:not(.icon-mobile) {
-				width: 36px;
-				height: 36px;
+				width: 30px;
+				height: 30px;
 			}
 
 			@media (max-width: breakpoints.$mobile) {
-				width: 36px;
-				height: 36px;
+				width: 30px;
+				height: 30px;
 			}
 
 			i {
 				font-size: 18px;
+			}
+
+			&.icon-mobile {
+				i {
+					transform: translateX(1px);
+				}
 			}
 		}
 	}

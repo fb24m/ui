@@ -1,7 +1,6 @@
-import { Card } from '../../../components';
 import styles from './index.module.scss';
 import React from 'react';
-import { Title2, Link } from '../../../components';
+import { Title2, Link, Card } from '@fb24m/ui/components';
 
 interface PostProps {
 	id: number

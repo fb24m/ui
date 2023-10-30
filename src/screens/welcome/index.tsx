@@ -1,7 +1,7 @@
 import styles from './index.module.scss';
 import React from 'react';
 
-import { Label, Title1, Body1, Button, Icon, Image } from '../../components';
+import { Label, Title1, Body1, Button, Icon, Image } from '@fb24m/ui/components';
 import { Advantage } from './Advantage';
 
 export const Welcome = (): React.ReactElement => {

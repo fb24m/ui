@@ -5,7 +5,7 @@ import { WordpressService } from '../../services/Wordpress';
 
 import { Sidebar } from '../../screens/Sidebar';
 import { Post } from './Post';
-import { ErrorHandler } from '../../components';
+import { ErrorHandler } from '@fb24m/ui/components';
 
 import { useQuery } from '@tanstack/react-query';
 

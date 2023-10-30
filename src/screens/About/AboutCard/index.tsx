@@ -1,7 +1,7 @@
 import styles from './index.module.scss';
 import React from 'react';
 
-import { Body1, Title3 } from '../../../components';
+import { Body1, Title3 } from '@fb24m/ui/components';
 
 interface AboutCardProps {
 	title: string,

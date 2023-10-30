@@ -11,7 +11,7 @@ export const SettingsProvider = (props: { children: ReactElement | ReactElement[
 
 	if (isLoading) return <SettingsContext.Provider value={defaultSettings}>{props.children}</SettingsContext.Provider>
 	if (isSuccess) {
-		console.log(data); return (
+		return (
 			<SettingsContext.Provider value={data!.data}>{props.children}</SettingsContext.Provider>
 		);
 	}

@@ -4,12 +4,12 @@ import './index.scss';
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
-import { App } from './components/App';
+import { App } from './blocks/App';
 import { SettingsProvider } from './contexts/SettingsProvider';
 
-import { ThemeProvider } from './components/ThemeProvider';
-import { fb24mLightTheme } from './themes/fb24mLightTheme';
-import { fb24mDarkTheme } from './themes/fb24mDarkTheme';
+import { ThemeProvider } from '@fb24m/ui/components/ThemeProvider';
+import { fb24mLightTheme } from '@fb24m/ui/themes/fb24mLightTheme';
+import { fb24mDarkTheme } from '@fb24m/ui/themes/fb24mDarkTheme';
 import { isLightTheme } from './functions/isLightTheme';
 
 const queryClient = new QueryClient();

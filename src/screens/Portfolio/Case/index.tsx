@@ -1,7 +1,7 @@
 import styles from './index.module.scss';
 import React from 'react';
 
-import { Card, Image, Title4 } from '../../../components';
+import { Card, Image, Title4 } from '@fb24m/ui/components';
 
 interface CaseProps {
 	image: string

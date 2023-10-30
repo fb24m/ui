@@ -1,5 +1,5 @@
 import styles from './style.module.scss';
-import { Title3, Body1, Icon } from "../../../components";
+import { Title3, Body1, Icon } from "@fb24m/ui/components";
 
 interface AdvantageProps {
 	icon: string

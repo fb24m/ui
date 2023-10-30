@@ -1,12 +1,11 @@
-import { Alignment, Box, Button, Icon, Input } from '../../components';
 import styles from './index.module.scss';
 import React from 'react';
 
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { PopupFooter } from '../../components/PopupFooter/index';
-import { PopupBody } from '../../components/PopupBody';
-import { Popup } from '../../components/Popup/index';
-import { Title3 } from '../../components/Title3/index';
+import { PopupFooter } from '@fb24m/ui/components/PopupFooter';
+import { PopupBody } from '@fb24m/ui/components/PopupBody';
+import { Popup } from '@fb24m/ui/components/Popup';
+import { Title3, Alignment, Box, Button, Icon, Input } from '@fb24m/ui/components/';
 
 interface ContactFormInputs {
 	name: string
@@ -15,7 +14,7 @@ interface ContactFormInputs {
 }
 
 interface ContactFormProps {
-	buttonsAlign: Alignment
+	buttonsJustify: Alignment
 	buttons?: React.ReactElement
 	bind?: string
 	as?: 'popup' | 'card'
@@ -57,7 +56,7 @@ export const ContactForm = (props: ContactFormProps): React.ReactElement => {
 		</div>
 
 	const buttons =
-		<Box align={props.buttonsAlign}>
+		<Box justify={props.buttonsJustify}>
 			{props.buttons}
 			<Button type='submit' icon={<Icon name="phone_enabled" />} appearance='Primary'>Отправить</Button>
 		</Box>

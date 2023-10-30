@@ -1,7 +1,7 @@
 import styles from './index.module.scss';
 import React from 'react';
 
-import { Label, Title2 } from '../../components';
+import { Label, Title2 } from '@fb24m/ui/components';
 import { Case } from './Case';
 
 export const Portfolio = (): React.ReactElement => {

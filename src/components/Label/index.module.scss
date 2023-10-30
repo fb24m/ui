@@ -1,9 +1,0 @@
-@use '../../scss/vars';
-@use '../../scss/mixins';
-
-.label {
-	font-family: 'Pacifico', sans-serif;
-	color: var(--mainColor);
-	font-size: mixins.rem(30);
-	margin-bottom: -30px;
-}
