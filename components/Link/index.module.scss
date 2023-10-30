@@ -1,0 +1,15 @@
+.link {
+	color: var(--mainColor);
+
+	background-color: transparent;
+	font-size: 14px;
+	font-weight: 500;
+
+	&:hover {
+		color: var(--hoverColor);
+	}
+
+	&:active {
+		color: var(--activeColor);
+	}
+}

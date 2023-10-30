@@ -1,5 +1,0 @@
-@use '../../scss/grid.scss';
-
-.grid {
-	@include grid.grid(4, $gap: 24px);
-}
